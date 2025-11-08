@@ -1,0 +1,68 @@
+======================================================================
+DEEP Q-LEARNING EXPERIMENT RESULTS
+Atari DonkeyKong-v5 Environment
+Date: 2025-11-08 01:32:38
+Student: Pranav (MS Information Systems, Northeastern University)
+======================================================================
+
+BASELINE PERFORMANCE
+----------------------------------------------------------------------
+Training: 1500 episodes
+Average reward (last 100): 122.00
+Hyperparameters:
+  Learning rate (α): 0.00025
+  Discount factor (γ): 0.99
+  Epsilon decay: 0.995
+  Epsilon min: 0.1
+
+EXPERIMENT RESULTS
+======================================================================
+
+1. BELLMAN EQUATION - LEARNING RATE (α)
+----------------------------------------------------------------------
+Modification: α = 0.00025 → 0.0005 (2x increase)
+Result: 810.00 reward
+Improvement: +688.00 (563.9%)
+Conclusion: Higher learning rate significantly improved performance.
+Faster convergence allows agent to learn optimal policy more quickly.
+
+2. BELLMAN EQUATION - DISCOUNT FACTOR (γ)
+----------------------------------------------------------------------
+Modification: γ = 0.99 → 0.95 (more myopic)
+Result: 1083.00 reward
+Improvement: +961.00 (787.7%)
+Conclusion: Lower gamma improved performance. DonkeyKong benefits
+from focusing on immediate rewards rather than long-term planning.
+
+3. EXPLORATION PARAMETERS (ε)
+----------------------------------------------------------------------
+3a. Lower Min Epsilon (0.1 → 0.01):
+    Result: 1146.00 reward
+    Improvement: +1024.00
+
+3b. Faster Decay (0.995 → 0.99):
+    Result: 1053.00 reward
+    Improvement: +931.00
+
+Conclusion: Both modifications improved exploration efficiency.
+Lower minimum epsilon maintained exploration throughout training.
+
+4. POLICY EXPLORATION - BOLTZMANN/SOFTMAX
+----------------------------------------------------------------------
+Alternative Policy: Softmax action selection with temperature parameter
+P(a|s) = exp(Q(s,a)/τ) / Σ exp(Q(s,a')/τ)
+
+Result: 3567.00 reward
+Improvement: +3445.00 (2823.8%)
+Conclusion: Boltzmann exploration MASSIVELY outperformed ε-greedy.
+Probabilistic selection based on Q-values provides better exploration
+than random actions. Temperature parameter allows smooth transition
+from exploration to exploitation.
+
+OVERALL CONCLUSIONS
+======================================================================
+1. All parameter modifications improved performance
+2. Best performer: Boltzmann Softmax (3567 reward)
+3. Key insight: DonkeyKong benefits from immediate reward focus
+4. Boltzmann exploration provides superior learning dynamics
+5. Total training time: 151.1 minutes
