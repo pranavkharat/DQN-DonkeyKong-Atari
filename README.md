@@ -196,25 +196,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Pranav**  
 MS Information Systems Student  
 Northeastern University  
-📧 [Your email]  
-💼 [LinkedIn profile]  
-🌐 [Portfolio website]
+📧 kharat.p@northeastern.edu
+
 
 ---
 
-## ⭐ **Citation**
 
-If you use this code or methodology, please cite:
-```bibtex
-@misc{pranav2025dqn,
-  author = {Pranav},
-  title = {Deep Q-Learning for Atari DonkeyKong},
-  year = {2025},
-  publisher = {GitHub},
-  url = {https://github.com/YOUR_USERNAME/DQN-DonkeyKong-Atari}
-}
-```
 
----
+
 
 **Built with ❤️ for reinforcement learning research**
