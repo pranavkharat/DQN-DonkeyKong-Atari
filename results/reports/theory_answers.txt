@@ -7,17 +7,17 @@ theory_answers = """
 THEORY QUESTION ANSWERS
 ================================================================================
 
-Q1. ENVIRONMENT ANALYSIS (5 points)
+Q1. ENVIRONMENT ANALYSIS 
 States: Stacked 4 grayscale frames (84×84 pixels) → (4, 84, 84) tensor
 Actions: 18 discrete actions (NOOP, FIRE, UP, DOWN, LEFT, RIGHT, combinations)
 Q-table: No explicit table - neural network with ~1.7M parameters approximates Q(s,a)
 
-Q2. REWARD STRUCTURE (5 points)
+Q2. REWARD STRUCTURE 
 Rewards: Direct from game score increases, penalties for losing lives
 Why: Aligns with game objectives, provides dense feedback signal for learning
 Implementation: Atari environment handles reward calculation automatically
 
-Q3. BELLMAN ALPHA & GAMMA (5 points)
+Q3. BELLMAN ALPHA & GAMMA 
 Baseline: α=0.00025, γ=0.99
 Tested: α=0.0005 (2x increase), γ=0.95 (more myopic)
 Results: Both improved performance significantly
@@ -25,53 +25,53 @@ Results: Both improved performance significantly
 - Lower γ: 1083 reward (+961, 788% improvement)
 Conclusion: Faster learning and immediate reward focus benefit DonkeyKong
 
-Q4. POLICY EXPLORATION (5 points)
+Q4. POLICY EXPLORATION 
 Alternative: Boltzmann/Softmax exploration (NOT ε-greedy)
 Implementation: P(a|s) = exp(Q(s,a)/τ) / Σ exp(Q(s,a')/τ)
 Result: 3567 reward (+3445, 2824% improvement)
 Conclusion: Probabilistic selection vastly outperforms random exploration
 
-Q5. EXPLORATION PARAMETERS (5 points)
+Q5. EXPLORATION PARAMETERS 
 Tested: ε_min=0.01, decay=0.99
 Results: 
 - Lower min epsilon: 1146 reward (+1024)
 - Faster decay: 1053 reward (+931)
 Conclusion: Maintained exploration improves final performance
 
-Q6. AVERAGE STEPS PER EPISODE (5 points)
+Q6. AVERAGE STEPS PER EPISODE 
 Baseline: ~850 steps/episode
 Experiments: 800-900 steps/episode (similar across all experiments)
 
-Q7. Q-LEARNING CLASSIFICATION (5 points)
+Q7. Q-LEARNING CLASSIFICATION 
 Answer: VALUE-BASED
 Explanation: DQN learns Q-values Q(s,a) explicitly and derives policy via 
 argmax. Does not directly parameterize policy π(a|s) like policy gradient 
 methods (REINFORCE, PPO). The Bellman equation updates values, not policy 
 parameters directly.
 
-Q8. DQN VS LLM AGENTS (5 points)
+Q8. DQN VS LLM AGENTS 
 DQN: Trial-and-error learning, environment interaction, specialized for MDPs
 LLM: Pre-trained on text, general reasoning, no environment interaction
 DQN requires millions of steps; LLM can plan from descriptions immediately
 
-Q9. EXPECTED LIFETIME VALUE (5 points)
+Q9. EXPECTED LIFETIME VALUE 
 V^π(s) = E[Σ_{t=0}^∞ γ^t R_t | s_0=s, π]
 Meaning: Sum of all future discounted rewards starting from state s
 In DonkeyKong: Immediate points + discounted future points from reaching 
 higher levels. Gamma (0.99) weighs next step at 99% of current value.
 
-Q10. RL FOR LLM AGENTS (5 points)
+Q10. RL FOR LLM AGENTS 
 RLHF (Reinforcement Learning from Human Feedback):
 - Reward model trained on human preferences
 - PPO for policy optimization
 - Application: Align LLM outputs with human values
 
-Q11. PLANNING: RL VS LLM (5 points)
+Q11. PLANNING: RL VS LLM 
 RL (DQN): Model-free, learns through experience, no explicit planning
 LLM: Chain-of-thought reasoning, in-context learning, declarative planning
 Key difference: RL learns policies through rewards, LLMs reason symbolically
 
-Q12. Q-LEARNING ALGORITHM (5 points)
+Q12. Q-LEARNING ALGORITHM 
 Pseudocode:
 Initialize Q(s,a) arbitrarily
 For each episode:
@@ -83,16 +83,11 @@ For each episode:
     s ← s'
   Until s is terminal
 
-Q13. LLM + DQN INTEGRATION (5 points)
+Q13. LLM + DQN INTEGRATION 
 Architecture: Hierarchical system
 - LLM: High-level planning, goal setting, strategy
 - DQN: Low-level control, action execution
 Example: LLM decides "reach the princess", DQN executes jumping/climbing
 """
 
-# Save to file
-with open('/kaggle/working/FINAL_SUBMISSION/theory_answers.txt', 'w') as f:
-    f.write(theory_answers)
 
-print(theory_answers)
-print("\n✅ Theory answers saved!")
