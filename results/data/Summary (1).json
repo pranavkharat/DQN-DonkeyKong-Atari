@@ -1,0 +1,59 @@
+{
+  "experiment_info": {
+    "date": "2025-11-08 01:32:38",
+    "student": "Pranav",
+    "assignment": "Deep Q-Learning for Atari DonkeyKong",
+    "total_experiments": 5,
+    "baseline_episodes": 1000,
+    "experiment_episodes": 500
+  },
+  "baseline": {
+    "avg_reward": 122.0,
+    "learning_rate": 0.00025,
+    "gamma": 0.99,
+    "epsilon_min": 0.1,
+    "epsilon_decay": 0.995
+  },
+  "experiments": {
+    "Higher_LR": {
+      "avg_reward": 810.0,
+      "vs_baseline": 688.0,
+      "improvement_percent": 563.9344262295082,
+      "training_time_minutes": 22.943039214611055,
+      "max_reward": 2700.0,
+      "min_reward": 0.0
+    },
+    "Lower_Gamma": {
+      "avg_reward": 1083.0,
+      "vs_baseline": 961.0,
+      "improvement_percent": 787.7049180327868,
+      "training_time_minutes": 23.468963313102723,
+      "max_reward": 3100.0,
+      "min_reward": 0.0
+    },
+    "Lower_MinEps": {
+      "avg_reward": 1146.0,
+      "vs_baseline": 1024.0,
+      "improvement_percent": 839.344262295082,
+      "training_time_minutes": 24.42963089942932,
+      "max_reward": 4200.0,
+      "min_reward": 0.0
+    },
+    "Faster_Decay": {
+      "avg_reward": 1053.0,
+      "vs_baseline": 931.0,
+      "improvement_percent": 763.1147540983607,
+      "training_time_minutes": 28.4555450797081,
+      "max_reward": 3900.0,
+      "min_reward": 0.0
+    },
+    "Boltzmann_Softmax": {
+      "avg_reward": 3567.0,
+      "vs_baseline": 3445.0,
+      "improvement_percent": 2823.7704918032787,
+      "training_time_minutes": 51.801695024967195,
+      "max_reward": 4400.0,
+      "min_reward": 0.0
+    }
+  }
+}
